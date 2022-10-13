@@ -29,7 +29,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
       ),
-      body: const HomeDetails(),
+      body: const Center(
+          child: Text(
+        "String",
+        style: TextStyle(
+          color: Colors.blue,
+          fontSize: 40,
+        ),
+      )),
       drawer: const DrawerDetails(),
       bottomNavigationBar: const Navigation(),
     );
