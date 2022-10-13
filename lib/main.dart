@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
           child: Text(
         "String",
         style: TextStyle(
-          color: Colors.blue,
+          color: Colors.redAccent,
           fontSize: 40,
         ),
       )),
@@ -53,7 +53,7 @@ class DrawerDetails extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: const [
           DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration: BoxDecoration(color: Colors.black),
             child: Text("Drawer Header"),
           ),
           ListTile(
