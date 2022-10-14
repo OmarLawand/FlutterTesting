@@ -1,5 +1,6 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:test2/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,14 +30,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
       ),
-      body: const Center(
-          child: Text(
-        "String",
-        style: TextStyle(
-          color: Colors.redAccent,
-          fontSize: 40,
-        ),
-      )),
+      body: LoginPage(),
       drawer: const DrawerDetails(),
       bottomNavigationBar: const Navigation(),
     );
