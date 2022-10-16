@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -31,14 +30,13 @@ class _LoginInputState extends State<LoginInput> {
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
+
     return Container(
-      alignment: Alignment.center,
-      child: ListView(
-        padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextField(
             style: const TextStyle(color: Colors.black),
@@ -73,13 +71,10 @@ class _LoginInputState extends State<LoginInput> {
       ),
     );
   }
-  Future signIn() async{
+
+  Future signIn() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim());
-
   }
 }
-
-
-
