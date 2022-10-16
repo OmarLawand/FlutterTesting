@@ -1,5 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:test2/login.dart';
 
 void main() {
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Startup Name Generator',
-      home: HomePage(),
+      home: LoginPage(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -30,7 +33,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
       ),
-      body: LoginPage(),
+      body: const Center(
+          child: Text(
+        "String",
+        style: TextStyle(
+          color: Colors.redAccent,
+          fontSize: 40,
+        ),
+      )),
       drawer: const DrawerDetails(),
       bottomNavigationBar: const Navigation(),
     );
@@ -99,6 +109,21 @@ class Navigation extends StatelessWidget {
   }
 }
 
+class MainPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        body: StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return const HomePage();
+            } else {
+              return const LoginPage();
+            }
+          },
+        ),
+      );
+}
 // // #enddocregion MyApp
 //
 // // #docregion RWS-var
