@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
   // #docregion build
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: 'Startup Name Generator',
-      home: LoginPage(),
+      home: MainPage(),
       debugShowCheckedModeBanner: false,
     );
   }

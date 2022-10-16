@@ -31,10 +31,7 @@ class _LoginInputState extends State<LoginInput> {
     super.dispose();
   }
 
-  void handleLogin() {
-    var email = emailController.text;
-    log('email: $email');
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +66,7 @@ class _LoginInputState extends State<LoginInput> {
                     borderRadius: BorderRadius.circular(10),
                   ))),
           ElevatedButton(
-            onPressed: handleLogin,
+            onPressed: signIn,
             child: const Text("Login"),
           )
         ],
