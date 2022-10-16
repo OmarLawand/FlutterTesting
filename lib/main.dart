@@ -57,16 +57,16 @@ class DrawerDetails extends StatelessWidget {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const [
-          DrawerHeader(
+        children: [
+          const DrawerHeader(
             decoration: BoxDecoration(color: Colors.black),
             child: Text("Drawer Header"),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.home),
             title: Text("Page 1"),
           ),
-          AboutListTile(
+          const AboutListTile(
             icon: Icon(
               Icons.info,
             ),
@@ -78,18 +78,14 @@ class DrawerDetails extends StatelessWidget {
             applicationLegalese: '© 2019 Company',
             child: Text('About app'),
           ),
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text("Logout"),
+            onTap: (){},
+          ),
         ],
       ),
     );
-  }
-}
-
-class HomeDetails extends StatelessWidget {
-  const HomeDetails({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 
